@@ -1,4 +1,7 @@
-const express = require('express'); //DECLARANDO UN OBJETO QUE VA A PERMITIR LEER PAGINAS ETC.importar la libreria para crear un servidor web
+//ECMA Sript 6
+// commin JS
+import express from 'express';
+//const express = require('express'); //DECLARANDO UN OBJETO QUE VA A PERMITIR LEER PAGINAS ETC.importar la libreria para crear un servidor web
 //INSTANCIAR NUESTRA APLICACIÓN WEB
 const app = express();
 //CONFIGURAMOS NUESTRO SERVIDOR WEB (puerto donde estara escuchando nuestro sitio web)
@@ -11,7 +14,7 @@ app.get("/",function(req, res){
     res.send("Hola mundo desde Node, a través del navegador")
 });
 app.get("/QuienSoy",function(req, res){
-    res.json({"Estudiante": "Guadalupe Idai Vargas Galindo",
+    res.json({"Estudiante": "Angel de Jesus Rufino Mendoza",
         "grado":"4°",
         "grupo":"B",
         "asignatura":"Aplicaciones de Software Orientado a Servicios (AWOS)"});

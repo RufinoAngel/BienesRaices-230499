@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "saluda": "node saluda.js",
-    "server": "nodemon index.js"
+    "saluda":"node saluda.js",
+    "server":"nodemon index.js"
   },
   "repository": {
     "type": "git",
