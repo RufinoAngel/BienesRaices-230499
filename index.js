@@ -12,7 +12,8 @@ app.listen(port, () => {
   console.log(`La aplicación ha iniciado en el puerto: ${port}`);  
 });
 //Probamos rutas para poder presentar mensajes al usuario a través del navegador
-
+// Definir la carpeta publica de recursos estaticos (assets)
+app.use(express.static('./public'));
 //Routing - Enrutamiento
 app.use('/',generalRoutes);
 app.use('/usuario/', userRoutes);

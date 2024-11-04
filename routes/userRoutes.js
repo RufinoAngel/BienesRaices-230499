@@ -36,4 +36,7 @@ router.delete("/deleteUser/:email", function(request,response){
 })
 
 
+router.get("/login",formularioLogin/*Middelware*/)
+router.get("/createAccount",formularioRegister)
+router.get("/passwordRecovery",formularioPasswordRecovery)
 export default router;
