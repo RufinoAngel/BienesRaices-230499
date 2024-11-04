@@ -1,5 +1,6 @@
 import express from 'express';
 const router =  express.Router();
+import { formularioLogin,formularioPasswordRecovery,formularioRegister } from './controllers/userController.js'; 
 //GET - Se utiliza para la lectura de datos e información del servidor al cliente
 //ENDPOINTS - son las rutas para acceder a las secciones o funciones de nuestra aplicación web
 // 2 componentes de una petición ruta (a donde voy), función callback (que hago)
@@ -33,4 +34,6 @@ router.patch("/updatePassword/:email/:newPassword/:newPasswordConfirm", function
 router.delete("/deleteUser/:email", function(request,response){
     response.send(`Se ha solicitado la eliminación del usuario asociado al correo: ${request.params.email}`)
 })
+
+
 export default router;

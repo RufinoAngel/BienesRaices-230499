@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "saluda":"node saluda.js",
-    "server":"nodemon index.js"
+    "saluda": "node saluda.js",
+    "server": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "nodemon": "^3.1.7"
   },
   "dependencies": {
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "pug": "^3.0.3"
   }
 }

@@ -16,3 +16,10 @@ app.listen(port, () => {
 //Routing - Enrutamiento
 app.use('/',generalRoutes);
 app.use('/usuario/', userRoutes);
+
+
+//Habilitar pug
+//Set es para hacer configuraciones
+app.set('view engine','pug')
+app.set('views','./views')//se define donde tendrá el proyecto las vistas
+//auth -> auntentificación
