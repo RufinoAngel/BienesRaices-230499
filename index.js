@@ -2,11 +2,19 @@
 // commin JS
 
 import express from 'express';
-import generalRoutes from './routes/generalRoutes.js'
-import userRoutes from './routes/userRoutes.js'
+import generalRoutes from './routes/generalRoutes.js';
+import userRoutes from './routes/userRoutes.js';
+import db from './config/db.js';
 //const express = require('express'); //DECLARANDO UN OBJETO QUE VA A PERMITIR LEER PAGINAS ETC.importar la libreria para crear un servidor web
 
 //INSTANCIAR NUESTRA APLICACIÓN WEB
+//conexion a la Base de Datos
+try{
+  await db.authenticate();
+  console.log('Conexion Correcta a la Base DE Datos')
+}catch(error){
+  console.log(error)
+}
 
 const app = express();
 
