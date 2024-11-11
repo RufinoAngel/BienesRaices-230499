@@ -1,4 +1,4 @@
-# BienesRaices_230574
+# BienesRaices_230499
 Proyecto de Clase para la Unidad 2 de la Asignatura de Aplicaciones Web Orientadas a Servicios (AWOS), a través de una aplicación web en Arquitectura SOA para el caso de estudio de una empresa de Bienes Raíces (Compra - Venta de Bienes Inmuebles).
 
 
@@ -9,8 +9,9 @@ Para poder demostrar y aprender la creación y consumo de interfaces de Programa
 |No.|Fecha|Descripción|Potenciador|Estatus|
 |---|---|---|---|---|
 |8.|17/10/2024|Nuevo Repositorio del proyecto implementado .gitignore|1|Finalizada|
-|9.|22/10/2024|Creación de una Aplicación Web usando Express|11|⭐Finalizada|
-|10.|24/10/2024|Operaciones Básicas de una API a traves de los verbos HTTP||⭐ Activa|
+|9.|22/10/2024|Creación de una Aplicación Web usando Express|12|⭐Finalizada|
+|10.|24/10/2024|Operaciones Básicas de una API a traves de los verbos HTTP|12|⭐ Finalizada|
+|11.|05/11/2024|Creación de fromularios para el ingreso, Registro y Recuperación de contraseñas de usuario |13|⭐ Activa|
 
 ## Autor
 **Angel de Jesus Rufino Mendoza** / [@RufinoAngel](https://github.com/RufinoAngel)<br>
