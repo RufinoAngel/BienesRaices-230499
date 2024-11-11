@@ -592,17 +592,13 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(80 200 120 / var(--tw-bg-opacity));
 }
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-.bg-celadon {
-  --tw-bg-opacity: 1;
-  background-color: rgb(168 230 161 / var(--tw-bg-opacity));
-}
 .bg-pigmentgreen {
   --tw-bg-opacity: 1;
   background-color: rgb(76 175 80 / var(--tw-bg-opacity));
+}
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 .px-2 {
   padding-left: 0.5rem;
@@ -671,10 +667,6 @@ video {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
 .text-pigmentgreen {
   --tw-text-opacity: 1;
   color: rgb(76 175 80 / var(--tw-text-opacity));
@@ -690,10 +682,6 @@ video {
 .hover\:bg-celadon:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(168 230 161 / var(--tw-bg-opacity));
-}
-.hover\:bg-pigmentgreen:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(76 175 80 / var(--tw-bg-opacity));
 }
 .hover\:underline:hover {
   text-decoration-line: underline;

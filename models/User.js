@@ -1,21 +1,22 @@
 import {DataTypes} from 'sequelize'
-import db from '../config/db.js'
-import { defineArguments } from 'graphql/type/definition'
-const Usuario=db.define('usuarios',{
-    nombre:{
+import db from '../db/config.js'
+
+const User=db.define('tbb_users',{
+    name:{
         type:DataTypes.STRING,
         allownull:false
     },
     email:{
         type:DataTypes.STRING,
-        allownull:false
+        allownull:false,
+        unique:true
     },
     password:{
         type:DataTypes.STRING,
         allownull:false
     },
     token:DataTypes.STRING,
-    confimado:DataTypes.BOOLEAN
+    confirmed:DataTypes.BOOLEAN
 })
 
-export default Usuario
+export default User;
