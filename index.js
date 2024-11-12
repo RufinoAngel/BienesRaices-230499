@@ -19,20 +19,13 @@ try{
 
 
 const app = express();
-
 //Definir la carpeta pública de recursos estáticos (assets)
 app.use(express.static('./public'));
-
 
 //Habilitar la lectura de datos desde formularios
 app.use(express.urlencoded({encoded:true}));
 
 
-//CONFIGURAMOS NUESTRO SERVIDOR WEB (puerto donde estara escuchando nuestro sitio web)
-const port = 3000;
-app.listen(port, () => {
-  console.log(`La aplicación ha iniciado en el puerto: ${port}`);  
-});
 
 //Routing - Enrutamiento
 app.use('/',generalRoutes);
@@ -46,3 +39,8 @@ app.set('view engine','pug')
 app.set('views','./views')//se define donde tendrá el proyecto las vistas
 //auth -> auntentificación
 
+//CONFIGURAMOS NUESTRO SERVIDOR WEB (puerto donde estara escuchando nuestro sitio web)
+const port = 3000;
+app.listen(port, () => {
+  console.log(`La aplicación ha iniciado en el puerto: ${port}`);  
+});
