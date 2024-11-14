@@ -6,6 +6,7 @@ export default {
     colors: {
       transparent: 'transparent',
       current: 'currentcolor',
+      'redd':'#D62828',
       'black': '#000000',
       'white': '#ffffff',
       'celadon': '#A8E6A1',

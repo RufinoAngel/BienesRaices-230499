@@ -2,6 +2,8 @@ import { check,validationResult } from "express-validator";
 import User from "../models/User.js"
 import db from "../db/config.js"
 import { request } from "express";
+import { Token } from "graphql";
+import { generateId } from "../helpers/tokens.js";
 
 const formularioLogin=(req,res)=>{
     res.render('auth/login',{
@@ -41,16 +43,25 @@ const createNewUser= async(req,res)=>{
             page:'Error al intentar crear una cuenta',
             errors:resultado.array()
         })
+    }else{
+        console.log('Registrando a un Nuevo Usuario...');
+        console.log(req.body);
     }
     res.json(resultado.array())
-    console.log("Registrando un nuevo usuario")
+
+    const {name:name,correo_usuario:email,pass_usuario:pass}=req.body
+    //verificamos que el usuario no existe previamente en la BD
+    const existingUser=await User.findOne({where:{email}})
     console.log(req.body);
+    //Registramos los datos en la BD.
     const newUser = await User.create({
-        name:req.body.name,
-        email:req.body.correo_usuario,
-        password:req.body.pass_usuario,
+        name,
+        email,
+        password,
+        Token:generateId(),
     });
     res.json(newUser);
+    return;
 
 }
 
