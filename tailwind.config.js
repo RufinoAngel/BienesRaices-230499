@@ -10,7 +10,8 @@ export default {
       'black': '#000000',
       'white': '#ffffff',
       'celadon': '#A8E6A1',
-      'emerald': '#50c878', // Cambiado a lowercase para consistencia
+      'cgr': '#F1FBFA',
+      'emerald': '#50c878', 
       'pigmentgreen': '#4CAF50',
     },
   },
