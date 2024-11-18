@@ -5,6 +5,9 @@ import express from 'express';
 import generalRoutes from './routes/generalRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import db from './db/config.js';
+import csrf from 'csurf'
+import cookieParser from 'cookie-parser';
+
 //const express = require('express'); //DECLARANDO UN OBJETO QUE VA A PERMITIR LEER PAGINAS ETC.importar la libreria para crear un servidor web
 
 //INSTANCIAR NUESTRA APLICACIÓN WEB
@@ -25,7 +28,11 @@ app.use(express.static('./public'));
 //Habilitar la lectura de datos desde formularios
 app.use(express.urlencoded({encoded:true}));
 
+//Habilitar Cookie Parser
+app.use(cookieParser())
 
+//Habilitar CSRF
+app.use(csrf({cookie:true}))
 
 //Routing - Enrutamiento
 app.use('/',generalRoutes);
@@ -40,7 +47,7 @@ app.set('views','./views')//se define donde tendrá el proyecto las vistas
 //auth -> auntentificación
 
 //CONFIGURAMOS NUESTRO SERVIDOR WEB (puerto donde estara escuchando nuestro sitio web)
-const port = 3000;
+const port = process.env.PORT ||3000;
 app.listen(port, () => {
   console.log(`La aplicación ha iniciado en el puerto: ${port}`);  
 });

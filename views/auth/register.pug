@@ -4,7 +4,7 @@ block contenido
     div.py-10
         h1.text-center.font-extrabold.my-10.text-4xl.text-pigmentgreen Bienes 
             span.font-normal.text-black Raíces
-        h2.text-center.font-extrabold.text-2xl=page
+        h2.text-center.font-extrabold.text-2xl= page
 
         if errors
             div(class="max-w-md mx-auto my-10")
@@ -13,7 +13,8 @@ block contenido
                         
         .mt-8.mx-auto.max-w-md
             .bg-white.py-8.px-4.shadow
-                form(method="POST" action="/auth/newUser" noValidate).space-y-5.px-6
+                form(method="POST" action="/auth/newUser" ).space-y-5.px-6
+                    input(type="hidden" name="_csrf" value= csrfToken)
                     div
                         label.block.text-sm.uppercase.text-black.mb-2.font-bold Nombre Completo: 
                         input#name.w-full.px-3.py-2.border-2.border-black.rounded-md(type="text" placeholder="Ej. Juanito Peréz" name="name")
