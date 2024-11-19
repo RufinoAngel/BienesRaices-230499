@@ -140,7 +140,7 @@ const createNewUser = async (req, res) => {
     //Mostrar mensaje de confirmación 
     res.render('templates/message',{
         page:'Cuenta Creada Correctamente',
-        msg:`Hemos Enviado un Email de Confirmación a ${email}, presione en el enlace`
+        msg:`Hemos Enviado un Email de Confirmación a  ${email}, presione en el enlace`
     })
 };
 //Funcion que comprueba una cuenta 
