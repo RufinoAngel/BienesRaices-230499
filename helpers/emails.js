@@ -94,7 +94,7 @@ const passwordRecoveryEmail = async (data) => {
                             Haz clic en el botón de abajo para restablecer tu contraseña:
                         </p>
                         <div style="text-align: center; margin: 20px 0;">
-                            <a href="${process.env.BACKEND_URL}:${process.env.PORT ?? 3000}/auth/reset-password/${token}" 
+                            <a href="${process.env.BACKEND_URL}:${process.env.PORT ?? 3000}/auth/passwordRecovery/${token}" 
                                style="background-color: #50c878; color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px; font-size: 16px;">
                                Restablecer Contraseña
                             </a>
