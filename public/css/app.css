@@ -567,7 +567,6 @@ video {
 .min-h-screen {
   min-height: 100vh;
 }
-
 .w-fit {
   width: -moz-fit-content;
   width: fit-content;
@@ -615,9 +614,9 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(168 230 161 / var(--tw-bg-opacity));
 }
-.bg-celadon-50 {
+.bg-cgr {
   --tw-bg-opacity: 1;
-  background-color: rgb(193 255 196 / var(--tw-bg-opacity));
+  background-color: rgb(241 251 250 / var(--tw-bg-opacity));
 }
 .bg-emerald {
   --tw-bg-opacity: 1;
@@ -637,10 +636,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-.bg-cgr {
-  --tw-bg-opacity: 1;
-  background-color: rgb(241 251 250 / var(--tw-bg-opacity));
 }
 .p-4 {
   padding: 1rem;
