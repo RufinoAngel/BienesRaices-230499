@@ -2,6 +2,7 @@ import { check, validationResult } from "express-validator";
 import User from "../models/User.js";
 import bcrypt from 'bcrypt';
 import { generateId, generarJWT } from "../helpers/tokens.js";
+import moment from "moment";
 import { registerEmail, passwordRecoveryEmail } from '../helpers/emails.js';
 
 // Mostrar formulario de login
@@ -77,7 +78,7 @@ const authenticate = async (req, res) => {
         // Almacenar el token en una cookie
         return res.cookie('_token', token, {
             httpOnly: true,
-        }).redirect('/myProperties');
+        }).redirect('/properties/myProperties');
     } catch (error) {
         console.error(error);
         return res.status(500).render('auth/login', {
@@ -98,7 +99,6 @@ const formularioRegister = (request, response) => {
 
 // Registrar nuevo usuario
 const createNewUser = async (req, res) => {
-    // Validación de los campos
     await check('name').notEmpty().withMessage('El nombre no puede ir vacío').run(req);
     await check('correo_usuario')
         .notEmpty().withMessage('El correo electrónico es un campo obligatorio')
@@ -110,6 +110,18 @@ const createNewUser = async (req, res) => {
         .run(req);
     await check('pass2_usuario')
         .equals(req.body.pass_usuario).withMessage('La contraseña debe coincidir con la anterior')
+        .run(req);
+
+    // Validación de la fecha de nacimiento
+    await check('fecha_nacimiento')
+        .notEmpty().withMessage('La fecha de nacimiento es obligatoria')
+        .custom((value) => {
+            const age = moment().diff(moment(value, 'YYYY-MM-DD'), 'years');
+            if (age < 18) {
+                throw new Error('Debes ser mayor de 18 años para registrarte');
+            }
+            return true;
+        })
         .run(req);
 
     let resultado = validationResult(req);
@@ -217,6 +229,7 @@ const resetPassword = async (req, res) => {
     }
 
     console.log("El Usuario si existe en la BD y está confirmado");
+    //Campo de la contraseña vacio
     user.password = "";
     // Generar un token y enviar un email
     user.token = generateId();
